@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Members</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to 'Posts', posts_path %>
+    <% if logged_in? %>
+      <%= link_to 'logout', logout_path %>
+    <% else %>
+      <%= link_to 'register', signup_path %>
+      <%= link_to 'login', login_path %>
+    <% end %>
+    
+    <%= yield %>
+  </body>
+</html>
